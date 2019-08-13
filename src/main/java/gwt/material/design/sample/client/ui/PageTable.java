@@ -107,7 +107,7 @@ public class PageTable extends Composite {
         });
 
 
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn("First Name", new TextColumn<Person>() {
             @Override
             public Comparator<? super RowComponent<Person>> sortComparator() {
                 return (o1, o2) -> o1.getData().getFirstName().compareToIgnoreCase(o2.getData().getFirstName());
@@ -116,9 +116,9 @@ public class PageTable extends Composite {
             public String getValue(Person object) {
                 return object.getFirstName();
             }
-        }, "First Name");
+        });
 
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn("Last Name", new TextColumn<Person>() {
             @Override
             public Comparator<? super RowComponent<Person>> sortComparator() {
                 return (o1, o2) -> o1.getData().getLastName().compareToIgnoreCase(o2.getData().getLastName());
@@ -127,9 +127,9 @@ public class PageTable extends Composite {
             public String getValue(Person object) {
                 return object.getLastName();
             }
-        }, "Last Name");
+        });
 
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn( "Phone",new TextColumn<Person>() {
             @Override
             public boolean numeric() {
                 return true;
@@ -146,11 +146,11 @@ public class PageTable extends Composite {
             public String getValue(Person object) {
                 return object.getPhone();
             }
-        }, "Phone");
+        });
 
         for(int i = 0; i < 8; i++) {
             final int index = i;
-            table.addColumn(new TextColumn<Person>() {
+            table.addColumn("Column " + index, new TextColumn<Person>() {
                 @Override
                 public Comparator<? super RowComponent<Person>> sortComparator() {
                     return (o1, o2) -> o1.getData().getPhone().compareToIgnoreCase(o2.getData().getPhone());
@@ -159,7 +159,7 @@ public class PageTable extends Composite {
                 public String getValue(Person object) {
                     return object.getPhone() + " " + index;
                 }
-            }, "Column " + index);
+            });
         }
 
         // Example of a widget column!

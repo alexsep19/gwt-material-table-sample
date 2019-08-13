@@ -95,38 +95,38 @@ public class InfiniteTable extends Composite {
         });
 
         // Add the tables columns
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn("First Name",new TextColumn<Person>() {
             @Override
-            public boolean isSortable() {
+            public boolean sortable() {
                 return true;
             }
             @Override
             public String getValue(Person object) {
                 return object.getFirstName();
             }
-        }, "First Name");
+        } );
 
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn("Last Name", new TextColumn<Person>() {
             @Override
-            public boolean isSortable() {
+            public boolean sortable() {
                 return true;
             }
             @Override
             public String getValue(Person object) {
                 return object.getLastName();
             }
-        }, "Last Name");
+        } );
 
-        table.addColumn(new TextColumn<Person>() {
+        table.addColumn("Phone", new TextColumn<Person>() {
             @Override
-            public boolean isSortable() {
+            public boolean sortable() {
                 return true;
             }
             @Override
             public String getValue(Person object) {
                 return object.getPhone();
             }
-        }, "Phone");
+        });
 
         table.addRowSelectHandler(event -> {
             updateSelectedRows(table.getSelectedRowModels(false).size());

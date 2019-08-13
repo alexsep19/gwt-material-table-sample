@@ -149,8 +149,8 @@ public class StandardTable extends Composite {
             }
         }
         .widthPixelToPercent(true)
-        .width("100px")
-        .nullValue("nullers"));
+        .width("100px"));
+//        .nullValue("nullers"));
 
         for (int i = 0; i < 15; i++) {
             final int index = i;
